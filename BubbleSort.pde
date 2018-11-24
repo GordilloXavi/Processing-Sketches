@@ -13,15 +13,14 @@ void setup(){
 }
 
 void mouseClicked(){
- list.shuffle(); 
+ list.shuffle();
+ list.changeColors();
 }
 
 void draw(){
   
   frameRate(2+mouseX/18);
-  
-  //println(list);
-  
+    
   background(0);
   
   list.sort();
