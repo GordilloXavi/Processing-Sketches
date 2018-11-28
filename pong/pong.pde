@@ -6,6 +6,7 @@ int speedL = 13;
 int speedR = 13;
 public int scoreR = 0;
 public int scoreL = 0;
+boolean IA = false;
 
 void setup(){
   
@@ -22,14 +23,11 @@ void setup(){
   
 }
 
-void change_speed(int sR, int sL){
-  
-}
-
 void mouseClicked(){
  ball.set_vel(ball_speed);
  scoreR = 0;
  scoreL = 0;
+ 
 }
 
 void mouseWheel(MouseEvent event) {
@@ -42,6 +40,7 @@ void draw(){
   
   background(0);
   drawNet();
+  if(IA)paddleR.think(ball.posy, ball.posx, speedR-3, ball.velx);
   paddleR.drawPaddle();
   paddleL.drawPaddle();
   ball.drawBall();
@@ -50,6 +49,8 @@ void draw(){
 }
 
 void keyPressed(){
+  
+  if(key == 'i')IA = !IA;
   
   if(key == 'r' && speedR < 60)speedR++;
     
