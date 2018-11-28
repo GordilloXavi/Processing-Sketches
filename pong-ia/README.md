@@ -1,2 +1,1 @@
-# Processing-Sketches
-Small processing projects
+This version of pong is identical to the other one, except this one allows single-player mode, since one of the paddles moves by itself...
