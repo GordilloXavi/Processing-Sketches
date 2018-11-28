@@ -1,0 +1,13 @@
+Move Left paddle up -> w
+Move Left paddle down -> s
+Move Right paddle up -> Arrow Up
+Move Left paddle down -> Arrow Down
+
+Change Ball speed: Musewheel;
+
+Change Right paddle speed -> r(Increase), e(Decrease)
+Cahnge Left paddle speed -> l(Increase), k(Decrease)
+
+Click the screen to restart the match.
+
+Press 'i' to activate single-player mode!
