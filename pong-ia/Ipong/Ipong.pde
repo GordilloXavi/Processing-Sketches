@@ -22,10 +22,6 @@ void setup(){
   
 }
 
-void change_speed(int sR, int sL){
-  
-}
-
 void mouseClicked(){
  ball.set_vel(ball_speed);
  scoreR = 0;
@@ -42,6 +38,7 @@ void draw(){
   
   background(0);
   drawNet();
+  paddleR.think(ball.posy, ball.posx, speedR-3, ball.velx);
   paddleR.drawPaddle();
   paddleL.drawPaddle();
   ball.drawBall();

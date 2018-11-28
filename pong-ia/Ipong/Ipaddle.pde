@@ -26,5 +26,16 @@ public class Paddle{
   }
   
   
+  void think(int y, int x, int speed, float dir){
+    
+    if(dir > 0 && x > width/2){
+    
+      if(y > posy+30)this.moveUp(speed);
+      else if(y< posx)this.moveUp(-speed);
+      
+    }
+  }
+  
+  
   
 }
