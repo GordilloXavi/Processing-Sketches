@@ -66,14 +66,13 @@ class List{
       
       int j = i;
       
-      while(j>0){
+      while(j>0 && list.get(j-1) > x){
         
-        if(list.get(i) >= list.get(j-1))break;
+        list.set(j,list.get(j-1));
         j--;
         
       }
-      
-      for(int k = i; k>j; k--)list.set(k,list.get(k-1));
+  
       list.set(j, x);
     }
     
@@ -83,20 +82,20 @@ class List{
   void insertionSortI(int iter){//This is going to implement the insertion sort
     
     
-      
       int x = list.get(iter);
       
       int j = iter;
       
-      while(j>0){
+      while(j>0 && list.get(j-1) > x){
         
-        if(list.get(iter) >= list.get(j-1))break;
+        list.set(j,list.get(j-1));
         j--;
         
       }
-      
-      for(int k = iter; k>j; k--)list.set(k,list.get(k-1));
+  
       list.set(j, x);
+      
+      
     
     
     
