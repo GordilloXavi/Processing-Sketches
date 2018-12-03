@@ -1,4 +1,3 @@
-
 class List{
   
   IntList list;
@@ -58,47 +57,33 @@ class List{
   }
   
   
-  void insertionSort(){//This is going to implement the insertion sort
+  void selectionSort(){//This is going to implement the insertion sort
     
-    for(int i = 1; i<size; ++i){
-      
-      int x = list.get(i);
-      
-      int j = i;
-      
-      while(j>0 && list.get(j-1) > x){
+      for(int i = 0; i<size-1; ++i){
         
-        list.set(j,list.get(j-1));
-        j--;
-        
+        int iMin = i;
+        for(int j = i+1; j< size; ++j){
+         if(list.get(j) < list.get(iMin))iMin = j; 
+        }
+        int t = list.get(i);
+        list.set(i, list.get(iMin));
+        list.set(iMin, t);
       }
-  
-      list.set(j, x);
-    }
     
     
   }
   
-  void insertionSortI(int iter){//This is going to implement the insertion sort
+  void selectionSortI(int i){//This is going to implement the insertion sort
     
-    
-      int x = list.get(iter);
-      
-      int j = iter;
-      
-      while(j>0 && list.get(j-1) > x){
-        
-        list.set(j,list.get(j-1));
-        j--;
-        
-      }
-  
-      list.set(j, x);
+        int iMin = i;
+        for(int j = i+1; j< size; ++j){
+         if(list.get(j) < list.get(iMin))iMin = j; 
+        }
+        int t = list.get(i);
+        list.set(i, list.get(iMin));
+        list.set(iMin, t);
       
       
-    
-    
-    
   }
   
 }
