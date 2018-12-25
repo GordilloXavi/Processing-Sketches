@@ -1,19 +1,22 @@
 
 flake[] snow;
-int size = 5;
+int size = 300;
 
 void setup(){
 
   snow = new flake[size];
   for(int i = 0; i<size; ++i){
-    snow[i] = new flake((int)random(5,10), (int)random(0,width));
+    snow[i] = new flake((int)random(1,16), (int)random(0,width));
   }
 
   background(0);
 
-  size(1000, 500);
+  //size(1100, 700);
+  fullScreen();
 
 } 
+
+
 
 void draw(){
 
