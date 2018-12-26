@@ -41,7 +41,10 @@ class timer{
     textFont(font); 
     fill(c);
     textAlign(CENTER, CENTER);
-    text(min + ":" + sec, width/2-15, height/2-7);
+    text(min + " " + sec, width/2-15, height/2-7);
+    text(":", width/2-15, height/2-60);
+
+
   } 
   
   void start(){
