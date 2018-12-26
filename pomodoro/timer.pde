@@ -1,5 +1,6 @@
 
 class timer{
+  PFont font = createFont("font2.ttf", 280);
   int ct, pt;
   boolean started = false;
   boolean pom = true;//false = 25, true = 5
@@ -36,9 +37,11 @@ class timer{
   } 
    
   void show(){
-    textSize(50);
+    textSize(90);
+    textFont(font); 
     fill(c);
-    text(min + ":" + sec, width/2-65, height/2-7);
+    textAlign(CENTER, CENTER);
+    text(min + ":" + sec, width/2-15, height/2-7);
   } 
   
   void start(){
