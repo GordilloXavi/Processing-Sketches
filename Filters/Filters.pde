@@ -1,19 +1,18 @@
 Picture pic;
-int i = 0;
 
 void setup(){
   
-  pic = new Picture("image.png");
-  size(pic.image.width, pic.image.height);
-background(255);
+  pic = new Picture("img.png");
+  fullScreen();
+  background(0);
   pic.show();
-  
   
 }
 
 void draw(){
   
-  if(i < pic.blurry.height*pic.blurry.width)pic.blur(i);
+  pic.blur();
   pic.show();
-  i++;  
+  noLoop();
+  
 }

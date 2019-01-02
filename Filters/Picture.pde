@@ -1,29 +1,33 @@
 class Picture{
  
-  PImage image;
+  private PImage image;
   private PImage blurry;
+  color[] pix;
   private color[][] pic;
+  int w, h;
   
   public Picture(String s){
     image = loadImage(s);
     blurry = image;
+    w = image.width;
+    h = image.height;
+    blurry.loadPixels();
+    pix = blurry.pixels;
     makeMatrix();
   }
   
-  
   void show(){
+    blurry.updatePixels();
     image(image, 0,0);
   }
   
   color[][] toMatrix(int w, int h){
     
-     blurry.loadPixels();
-    int s = blurry.pixels.length;
+    int s = pix.length;
     color[][] mat = new color[h][w];
     for(int i =0; i<s; ++i){
-      mat[i/w][i%w] = blurry.pixels[i];
+      mat[i/w][i%w] = pix[i];
     }
-    blurry.updatePixels();
 
     return mat;
   }
@@ -34,30 +38,27 @@ class Picture{
   
   void blur(){
     
-    blurry.loadPixels();
+    
     int x,y;
-    int sz = blurry.pixels.length;
+    int sz = pix.length;
     int w = blurry.width;
     
     for(int i = 0; i<sz; ++i){
       x = i%w;
       y = i/w;
-      blurry.pixels[i] = avgPix(x,y, i);
+      pix[i] = avgPix(x,y, i);
     }
-    blurry.updatePixels();
   }
+  
   void blur(int i){
     
-    blurry.loadPixels();
     int x,y;
-    int sz = blurry.pixels.length;
     int w = blurry.width;
     
       x = i%w;
       y = i/w;
-      blurry.pixels[i] = avgPix(x,y, i);
+      pix[i] = avgPix(x,y, i);
     
-    blurry.updatePixels();
   }
   
   color avgPix(int j, int i, int x){
@@ -126,12 +127,10 @@ class Picture{
      b %= 256;
      
      float p = x*100.0/(image.height*image.width);
-     
      println(p+"%");
 
-
-    color c = color(r,g,b);
-    return c;
+     color c = color(r,g,b);
+     return c;
   }
   
   

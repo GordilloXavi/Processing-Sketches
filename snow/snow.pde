@@ -1,6 +1,6 @@
 
 flake[] snow;
-int size = 300;
+int size =500 ;
 
 void setup(){
 

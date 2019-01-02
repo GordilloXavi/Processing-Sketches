@@ -34,7 +34,6 @@ class flake{
     //angle+=.001;
     if(y > height+size/2){
       reset();
-      
     } 
   } 
 
