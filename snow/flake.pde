@@ -4,7 +4,7 @@
 class flake{
   int x,y, size, ID;
   float velocity, angle = 0.01;
-  float velx = 0, accx = size*0.0005;
+  float velx = 0, accx = size*0.00005;
   PImage img;
   String[] paths = {"snowflake1.png", "snowflake2.png", "snowflake3.png", "snowball.jpg"};
 
